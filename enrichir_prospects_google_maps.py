@@ -180,12 +180,12 @@ def extract_metrics(item):
                 'gmaps_place_id': None, 'gmaps_url': None}
 
     return {
-        'gmaps_avis':     item.get('reviews') or item.get('total_reviews') or item.get('review_count'),
-        'gmaps_note':     item.get('rating') or item.get('average_rating'),
-        'gmaps_nom':      item.get('name') or item.get('business_name'),
-        'gmaps_adresse':  item.get('address') or item.get('full_address'),
-        'gmaps_place_id': item.get('place_id') or item.get('business_id'),
-        'gmaps_url':      item.get('url') or item.get('website') or item.get('google_maps_url'),
+        'gmaps_avis':     item.get('reviews_count'),
+        'gmaps_note':     item.get('rating'),
+        'gmaps_nom':      item.get('name'),
+        'gmaps_adresse':  item.get('full_address') or item.get('address'),
+        'gmaps_place_id': item.get('place_id'),
+        'gmaps_url':      item.get('website_url'),
     }
 
 # ── SCORE TAILLE ─────────────────────────────────────────────────────────────
