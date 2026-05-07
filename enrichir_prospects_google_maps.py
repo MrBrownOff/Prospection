@@ -56,6 +56,8 @@ def parse_args():
                         help='Limiter à N prospects (0 = tous) — utile pour tester')
     parser.add_argument('--reset', action='store_true',
                         help='Ignorer le checkpoint et recommencer depuis le début')
+    parser.add_argument('--debug', action='store_true',
+                        help='Afficher la réponse brute de l\'API pour diagnostic')
     return parser.parse_args()
 
 # ── CHECKPOINT ───────────────────────────────────────────────────────────────
@@ -288,6 +290,9 @@ def main():
         # Appel API
         results = search_gmaps(query, lat, lon, api_key)
         time.sleep(args.rate)
+
+        if args.debug and results is not None:
+            print(f"         🔎 Réponse brute : {json.dumps(results, ensure_ascii=False)[:500]}")
 
         if results is None:
             erreurs += 1
