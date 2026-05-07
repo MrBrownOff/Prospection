@@ -41,7 +41,7 @@ OUTPUT_EXCEL  = "Prospection_Interbois_Enrichi.xlsx"
 OUTPUT_CSV    = "prospects_enrichis.csv"
 
 API_HOST      = "google-maps-extractor2.p.rapidapi.com"
-API_URL       = f"https://{API_HOST}/maps/search"
+API_URL       = f"https://{API_HOST}/locate_and_search"
 RATE_LIMIT    = 1.0   # secondes entre chaque requête (ajuster selon ta limite)
 MAX_RESULTS   = 5     # nombre de résultats Google Maps à analyser par prospect
 RADIUS_M      = 500   # rayon de recherche en mètres autour des coordonnées
@@ -87,31 +87,23 @@ def build_query(row):
     return query
 
 def search_gmaps(query, lat, lon, api_key, radius=RADIUS_M):
-    """Appelle l'API Google Maps Extractor."""
+    """Appelle l'API Google Maps Extractor (locate_and_search, GET)."""
     headers = {
         "x-rapidapi-host": API_HOST,
         "x-rapidapi-key": api_key,
         "Content-Type": "application/json"
     }
 
-    # Payload avec coordonnées GPS pour cibler la zone
-    payload = {
-        "query": query,
-        "limit": MAX_RESULTS,
+    params = {
+        "query":    query,
+        "offset":   0,
+        "limit":    MAX_RESULTS,
+        "country":  "ca",
         "language": "fr",
     }
 
-    # Si coordonnées disponibles, ajouter la localisation
-    if lat and lon:
-        try:
-            payload["lat"] = float(lat)
-            payload["lng"] = float(lon)
-            payload["zoom"] = 14  # zoom serré = rayon ~500m
-        except (ValueError, TypeError):
-            pass
-
     try:
-        response = requests.post(API_URL, json=payload, headers=headers, timeout=15)
+        response = requests.get(API_URL, params=params, headers=headers, timeout=15)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.HTTPError as e:
