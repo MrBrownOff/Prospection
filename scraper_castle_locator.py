@@ -7,8 +7,8 @@ Utilisation :
     Option 1 — Depuis un fichier HTML local :
         python scraper_castle_locator.py --file castle_locator.html
 
-    Option 2 — Web scraping direct (si accès réseau disponible) :
-        python scraper_castle_locator.py --url https://castle.ca/fr/locator/
+    Option 2 — Web scraping avec navigateur (JavaScript) :
+        python scraper_castle_locator.py --browser
 
     Option 3 — Depuis le HTML en stdin :
         cat castle_locator.html | python scraper_castle_locator.py --stdin
@@ -17,6 +17,7 @@ Fonctionnalités :
     - Extrait : nom, adresse, ville, code postal, heures d'ouverture
     - Filtre seulement les magasins québécois
     - Exporte en CSV
+    - Support du JavaScript avec --browser (nécessite Playwright)
 """
 
 import sys
@@ -27,6 +28,7 @@ from bs4 import BeautifulSoup
 from pathlib import Path
 import json
 import re
+import time
 
 # ── CONFIG ───────────────────────────────────────────────────────────────────
 OUTPUT_CSV    = "castle_stores_quebec.csv"
@@ -200,17 +202,62 @@ def extract_stores(html):
 
     return stores
 
+# ── BROWSER SCRAPING ────────────────────────────────────────────────────────
+def fetch_with_browser(url):
+    """Utilise un navigateur headless pour charger la page et exécuter le JavaScript."""
+    try:
+        from selenium import webdriver
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support.ui import WebDriverWait
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.chrome.options import Options
+        from webdriver_manager.chrome import ChromeDriverManager
+        from selenium.webdriver.chrome.service import Service
+    except ImportError:
+        print("❌ Dépendances manquantes. Installe-les avec:")
+        print("   pip install selenium webdriver-manager")
+        return None
+
+    try:
+        print("   ⏳ Téléchargement du ChromeDriver...")
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=chrome_options)
+
+        print("   ⏳ Chargement de la page...")
+        driver.get(url)
+
+        # Attendre que les conteneurs de magasins se chargent
+        print("   ⏳ Attente du rendu JavaScript...")
+        wait = WebDriverWait(driver, 15)
+        wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, "location")))
+
+        time.sleep(2)  # Extra wait for full rendering
+        html = driver.page_source
+        driver.quit()
+        print("   ✅ Page chargée avec succès")
+        return html
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping avec navigateur : {e}")
+        return None
+
 # ── ARGUMENTS ───────────────────────────────────────────────────────────────
 def parse_args():
     parser = argparse.ArgumentParser(
         description='Scraper Castle Store Locator — Magasins québécois',
         epilog='Exemples:\n'
                '  python scraper_castle_locator.py --file locator.html\n'
-               '  python scraper_castle_locator.py --url https://castle.ca/fr/locator/',
+               '  python scraper_castle_locator.py --browser',
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument('--file', help='Lire depuis un fichier HTML local')
-    parser.add_argument('--url', help='Scraper depuis une URL')
+    parser.add_argument('--browser', action='store_true', help='Scraper avec navigateur (exécute JavaScript)')
     parser.add_argument('--stdin', action='store_true', help='Lire depuis stdin')
     return parser.parse_args()
 
@@ -231,9 +278,9 @@ def main():
         except FileNotFoundError:
             print(f"❌ Fichier non trouvé : {args.file}")
             sys.exit(1)
-    elif args.url:
-        print(f"\n🌐 Scraping {args.url}...\n")
-        html = fetch_page(args.url)
+    elif args.browser:
+        print(f"\n🌐 Scraping avec navigateur (JavaScript)...\n")
+        html = fetch_with_browser("https://castle.ca/fr/locator/")
     else:
         # Par défaut, chercher un fichier local
         default_file = "castle_locator.html"
@@ -242,10 +289,21 @@ def main():
             with open(default_file, 'r', encoding='utf-8') as f:
                 html = f.read()
         else:
-            print("ℹ️  Aucune source spécifiée. Utilisation :")
-            print("   python scraper_castle_locator.py --file castle_locator.html")
-            print("   ou")
-            print("   python scraper_castle_locator.py --url https://castle.ca/fr/locator/")
+            print("\n❌ Aucune source spécifiée.")
+            print("\n📋 Comment obtenir les données :\n")
+            print("Option 1 — Depuis les DevTools du navigateur (recommandé) :")
+            print("  1. Va sur https://castle.ca/fr/locator/")
+            print("  2. Ouvre les DevTools (F12)")
+            print("  3. Onglet 'Network' → cherche les requêtes vers une API")
+            print("  4. Cherche les réponses JSON avec des données de magasins")
+            print("  5. Exporte les données ou crée un fichier avec le HTML rendu\n")
+            print("Option 2 — Sauvegarde le HTML rendu :")
+            print("  curl https://castle.ca/fr/locator/ > castle_locator.html")
+            print("  python scraper_castle_locator.py --file castle_locator.html\n")
+            print("Option 3 — Avec navigateur (si accès réseau) :")
+            print("  python scraper_castle_locator.py --browser\n")
+            print("Option 4 — Depuis stdin :")
+            print("  curl https://castle.ca/fr/locator/ | python scraper_castle_locator.py --stdin\n")
             sys.exit(1)
 
     if not html:
