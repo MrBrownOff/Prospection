@@ -1,0 +1,128 @@
+{
+  "status": "enabled",
+  "retailers": [
+    {
+      "id": 1,
+      "name": "Le Bâtisseur Quincaillerie et Matériaux",
+      "address": {
+        "address": "153A Rue Principale",
+        "city": "Frampton",
+        "province": "Quebec",
+        "postal-code": "G0R 1M0"
+      },
+      "coordinates": {
+        "latitude": 45.8833,
+        "longitude": -71.0833
+      },
+      "contact": {
+        "phone": "(418) 555-0100",
+        "fax": null,
+        "email": "frampton@lebatisseur.ca",
+        "website": "lebatisseur.ca"
+      },
+      "hours": {
+        "monday-friday": {
+          "type": "Monday - Friday",
+          "display": "8:00 am - 5:30 pm"
+        },
+        "saturday": {
+          "type": "Saturday",
+          "display": "8:00 am - 12:00 pm"
+        },
+        "sunday": {
+          "type": "Sunday",
+          "display": "Closed"
+        }
+      },
+      "media": [],
+      "social": {
+        "facebook": "https://facebook.com/lebatisseur",
+        "instagram": "",
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "id": 2,
+      "name": "Castle Building Materials - Montreal",
+      "address": {
+        "address": "1234 Boulevard Saint-Laurent",
+        "city": "Montreal",
+        "province": "Quebec",
+        "postal-code": "H2X 1Y0"
+      },
+      "coordinates": {
+        "latitude": 45.5169,
+        "longitude": -73.5508
+      },
+      "contact": {
+        "phone": "(514) 555-0200",
+        "fax": null,
+        "email": "montreal@castle.ca",
+        "website": "castle.ca"
+      },
+      "hours": {
+        "monday-friday": {
+          "type": "Monday - Friday",
+          "display": "7:00 am - 6:00 pm"
+        },
+        "saturday": {
+          "type": "Saturday",
+          "display": "8:00 am - 5:00 pm"
+        },
+        "sunday": {
+          "type": "Sunday",
+          "display": "10:00 am - 4:00 pm"
+        }
+      },
+      "media": [],
+      "social": {
+        "facebook": "https://facebook.com/castle",
+        "instagram": "https://instagram.com/castlebldggroup",
+        "twitter": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "id": 3,
+      "name": "Castle Toronto Location",
+      "address": {
+        "address": "999 King Street West",
+        "city": "Toronto",
+        "province": "Ontario",
+        "postal-code": "M5H 3A5"
+      },
+      "coordinates": {
+        "latitude": 43.6411,
+        "longitude": -79.4009
+      },
+      "contact": {
+        "phone": "(416) 555-0300",
+        "fax": null,
+        "email": "toronto@castle.ca",
+        "website": "castle.ca"
+      },
+      "hours": {
+        "monday-friday": {
+          "type": "Monday - Friday",
+          "display": "8:00 am - 5:00 pm"
+        },
+        "saturday": {
+          "type": "Saturday",
+          "display": "9:00 am - 4:00 pm"
+        },
+        "sunday": {
+          "type": "Sunday",
+          "display": "Closed"
+        }
+      },
+      "media": [],
+      "social": {
+        "facebook": "",
+        "instagram": "",
+        "twitter": "",
+        "linkedin": ""
+      }
+    }
+  ]
+}
