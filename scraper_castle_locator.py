@@ -110,9 +110,15 @@ def extract_stores_from_api(api_data):
 
     stores = []
 
-    # L'API retourne un objet avec 'status' et 'retailers'
-    retailers = api_data.get('retailers', [])
-    if not isinstance(retailers, list):
+    # L'API retourne un objet avec 'status' et 'retailers' (objet ou array)
+    retailers_data = api_data.get('retailers', {})
+
+    # Gérer à la fois les formats objet et array
+    if isinstance(retailers_data, dict):
+        retailers = list(retailers_data.values())
+    elif isinstance(retailers_data, list):
+        retailers = retailers_data
+    else:
         retailers = []
 
     print(f"🔍 {len(retailers)} détaillants trouvés dans l'API")
@@ -120,16 +126,22 @@ def extract_stores_from_api(api_data):
     for retailer in retailers:
         try:
             # Extraire les informations de base
-            name = retailer.get('name', '').strip()
-            if not name:
+            name = retailer.get('name', '')
+            if not name or name is False:
                 continue
+            name = str(name).strip()
 
             # Extraire l'adresse
             address_data = retailer.get('address', {})
-            street = address_data.get('address', '').strip()
-            city = address_data.get('city', '').strip()
-            province = address_data.get('province', '').strip()
-            postal = address_data.get('postal-code', '').strip()
+            street = address_data.get('address', '') or ''
+            city = address_data.get('city', '') or ''
+            province = address_data.get('province', '') or ''
+            postal = address_data.get('postal-code', '') or ''
+
+            street = str(street).strip()
+            city = str(city).strip()
+            province = str(province).strip()
+            postal = str(postal).strip()
 
             # Normaliser et vérifier le code postal
             postal_clean = parse_postal_code(postal) if postal else None
@@ -140,11 +152,19 @@ def extract_stores_from_api(api_data):
             hours = {}
             hours_data = retailer.get('hours', {})
             if isinstance(hours_data, dict):
-                for day_key, day_data in hours_data.items():
-                    if isinstance(day_data, dict):
-                        day_type = day_data.get('type', day_key)
-                        day_display = day_data.get('display', '')
-                        hours[day_type] = day_display
+                for hour_id, hour_info in hours_data.items():
+                    if isinstance(hour_info, dict):
+                        day_type = hour_info.get('type', '')
+                        day_display = hour_info.get('display', '')
+                        if day_type and day_display and day_display != '12:00 am - 12:00 am':
+                            hours[day_type] = day_display
+
+            # Extraire contact
+            contact = retailer.get('contact', {})
+            phone = contact.get('phone', '') or ''
+            email = contact.get('email', '') or ''
+            phone = str(phone).strip() if phone and phone is not False else ''
+            email = str(email).strip() if email and email is not False else ''
 
             # Créer l'objet magasin
             store = {
@@ -156,8 +176,8 @@ def extract_stores_from_api(api_data):
                 'Lundi': hours.get('Monday - Friday', hours.get('Monday', '')),
                 'Samedi': hours.get('Saturday', ''),
                 'Dimanche': hours.get('Sunday', ''),
-                'Téléphone': retailer.get('contact', {}).get('phone', ''),
-                'Email': retailer.get('contact', {}).get('email', ''),
+                'Téléphone': phone,
+                'Email': email,
             }
 
             stores.append(store)
