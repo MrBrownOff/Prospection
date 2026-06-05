@@ -1,1 +1,4 @@
 castle_stores_quebec.csv
+# Generated outputs
+castle_stores_quebec*.csv
+*_geocoded.csv
