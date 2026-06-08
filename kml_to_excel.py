@@ -33,24 +33,18 @@ def parse_kml(kml_file):
     tree = ET.parse(kml_file)
     root = tree.getroot()
 
-    # Namespaces
-    ns = {
-        'kml': 'http://www.opengis.net/kml/2.2',
-        'gx': 'http://www.google.com/kml/ext/2.2'
-    }
-
     stores = []
 
-    # Trouver tous les Placemarks
-    for placemark in root.findall('.//kml:Placemark', ns):
+    # Trouver tous les Placemarks (en ignorant les namespaces)
+    for placemark in root.findall('.//{http://www.opengis.net/kml/2.2}Placemark'):
         store = {}
 
         # Nom
-        name_el = placemark.find('kml:name', ns)
+        name_el = placemark.find('{http://www.opengis.net/kml/2.2}name')
         store['Nom'] = name_el.text.strip() if name_el is not None else ''
 
         # Description (contient adresse, ville, code postal)
-        desc_el = placemark.find('kml:description', ns)
+        desc_el = placemark.find('{http://www.opengis.net/kml/2.2}description')
         if desc_el is not None and desc_el.text:
             text = desc_el.text
             # Extraire le contenu CDATA si présent
@@ -58,24 +52,14 @@ def parse_kml(kml_file):
             if cdata_match:
                 text = cdata_match.group(1)
 
-            # Debug : afficher le texte brut pour les 2 premiers magasins
-            if len(stores) < 2:
-                print(f"\n[DEBUG {len(stores)}] Texte brut:\n{text[:500]}\n")
-
-            # Split sur <br> pour obtenir les lignes
-            lines = text.split('<br>')
-
-            # Debug : afficher les lignes brutes
-            if len(stores) < 2:
-                print(f"[DEBUG] Lignes après split: {lines[:6]}\n")
-
-            # Nettoyer chaque ligne : supprimer les tags HTML et whitespace
-            lines = [re.sub('<[^>]+>', '', line).strip() for line in lines]
-            lines = [line for line in lines if line]  # Supprimer les lignes vides
-
-            # Debug : afficher les lignes nettoyées
-            if len(stores) < 2:
-                print(f"[DEBUG] Lignes nettoyées: {lines}\n")
+            # Remplacer les </div><div> par <br> pour normaliser
+            text = re.sub(r'</div><div>', '<br>', text)
+            # Supprimer tous les tags HTML SAUF les <br>
+            text = re.sub(r'<(?!/?br\s*/?)[^>]+>', '', text)
+            # Split sur <br> (avec ou sans slash de fermeture)
+            lines = re.split(r'<br\s*/?>', text)
+            # Nettoyer chaque ligne
+            lines = [line.strip() for line in lines if line.strip()]
 
             if len(lines) >= 4:
                 store['Adresse'] = lines[0]
@@ -94,10 +78,10 @@ def parse_kml(kml_file):
             store['Code postal'] = ''
 
         # Coordonnées (LookAt)
-        lookat = placemark.find('kml:LookAt', ns)
+        lookat = placemark.find('{http://www.opengis.net/kml/2.2}LookAt')
         if lookat is not None:
-            lat_el = lookat.find('kml:latitude', ns)
-            lon_el = lookat.find('kml:longitude', ns)
+            lat_el = lookat.find('{http://www.opengis.net/kml/2.2}latitude')
+            lon_el = lookat.find('{http://www.opengis.net/kml/2.2}longitude')
             store['Latitude'] = float(lat_el.text) if lat_el is not None else None
             store['Longitude'] = float(lon_el.text) if lon_el is not None else None
         else:
@@ -108,9 +92,9 @@ def parse_kml(kml_file):
         superficie_m2 = None
 
         # Chercher Polygon
-        polygon = placemark.find('kml:Polygon', ns)
+        polygon = placemark.find('{http://www.opengis.net/kml/2.2}Polygon')
         if polygon is not None:
-            outer = polygon.find('kml:outerBoundaryIs/kml:LinearRing/kml:coordinates', ns)
+            outer = polygon.find('{http://www.opengis.net/kml/2.2}outerBoundaryIs/{http://www.opengis.net/kml/2.2}LinearRing/{http://www.opengis.net/kml/2.2}coordinates')
             if outer is not None and outer.text:
                 coords_text = outer.text.strip()
                 coords = []
@@ -124,9 +108,9 @@ def parse_kml(kml_file):
 
         # LineString (fallback)
         if superficie_m2 is None:
-            linestring = placemark.find('kml:LineString', ns)
+            linestring = placemark.find('{http://www.opengis.net/kml/2.2}LineString')
             if linestring is not None:
-                coords_el = linestring.find('kml:coordinates', ns)
+                coords_el = linestring.find('{http://www.opengis.net/kml/2.2}coordinates')
                 if coords_el is not None and coords_el.text:
                     coords_text = coords_el.text.strip()
                     coords = []
