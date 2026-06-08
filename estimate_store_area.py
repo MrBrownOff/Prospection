@@ -320,7 +320,13 @@ def estimer_superficie(lat, lon, ms):
 def main():
     parser = argparse.ArgumentParser(description="Estime la superficie des magasins Castle")
     parser.add_argument("csv", help="Fichier CSV avec colonnes Latitude, Longitude")
+    parser.add_argument("--rayons", type=int, nargs='+', default=[50, 100, 200],
+                       help="Rayons de recherche en mètres (défaut: 50 100 200)")
     args = parser.parse_args()
+
+    global RAYONS_TENTATIVE
+    if args.rayons:
+        RAYONS_TENTATIVE = args.rayons
 
     csv_path = Path(args.csv)
     if not csv_path.exists():
