@@ -103,6 +103,16 @@ def parse_kml(kml_file):
                     outer = None
             else:
                 outer = None
+
+            # Debug pour les 2 premiers magasins
+            if len(stores) < 2:
+                print(f"[DEBUG {len(stores)}] Polygon found: {polygon is not None}")
+                print(f"[DEBUG {len(stores)}] outerBoundaryIs found: {outer_boundary is not None}")
+                print(f"[DEBUG {len(stores)}] LinearRing found: {linear_ring is not None}")
+                print(f"[DEBUG {len(stores)}] coordinates element found: {outer is not None}")
+                if outer is not None:
+                    print(f"[DEBUG {len(stores)}] coordinates.text: {outer.text[:100] if outer.text else 'None'}")
+
             if outer is not None and outer.text:
                 coords_text = outer.text.strip()
                 coords = []
@@ -113,6 +123,10 @@ def parse_kml(kml_file):
 
                 if len(coords) >= 3:
                     superficie_m2 = aire_geodesique_m2(coords)
+                    if len(stores) < 2:
+                        print(f"[DEBUG {len(stores)}] coords found: {len(coords)}, area: {superficie_m2}")
+            elif len(stores) < 2:
+                print(f"[DEBUG {len(stores)}] No coordinates text found")
 
         # LineString (fallback)
         if superficie_m2 is None:
