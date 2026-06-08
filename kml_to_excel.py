@@ -58,11 +58,24 @@ def parse_kml(kml_file):
             if cdata_match:
                 text = cdata_match.group(1)
 
+            # Debug : afficher le texte brut pour les 2 premiers magasins
+            if len(stores) < 2:
+                print(f"\n[DEBUG {len(stores)}] Texte brut:\n{text[:500]}\n")
+
             # Split sur <br> pour obtenir les lignes
             lines = text.split('<br>')
+
+            # Debug : afficher les lignes brutes
+            if len(stores) < 2:
+                print(f"[DEBUG] Lignes après split: {lines[:6]}\n")
+
             # Nettoyer chaque ligne : supprimer les tags HTML et whitespace
             lines = [re.sub('<[^>]+>', '', line).strip() for line in lines]
             lines = [line for line in lines if line]  # Supprimer les lignes vides
+
+            # Debug : afficher les lignes nettoyées
+            if len(stores) < 2:
+                print(f"[DEBUG] Lignes nettoyées: {lines}\n")
 
             if len(lines) >= 4:
                 store['Adresse'] = lines[0]
