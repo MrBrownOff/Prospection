@@ -3,6 +3,7 @@
 Convertir KML avec superficies en Excel
 ========================================
 Parse le KML Google Earth avec les superficies et exporte en Excel.
+Calcule la superficie à partir des polygones.
 
 Usage:
     python kml_to_excel.py CastleSuperficieverifiee.kml
@@ -13,6 +14,19 @@ import re
 import pandas as pd
 import sys
 from pathlib import Path
+import pyproj
+
+# Géodésie
+GEOD = pyproj.Geod(ellps="WGS84")
+
+def aire_geodesique_m2(coords_lon_lat):
+    """Calcule l'aire géodésique en m²."""
+    if len(coords_lon_lat) < 3:
+        return None
+    lons = [c[0] for c in coords_lon_lat]
+    lats = [c[1] for c in coords_lon_lat]
+    aire, _ = GEOD.polygon_area_perimeter(lons, lats)
+    return abs(aire)
 
 def parse_kml(kml_file):
     """Parse le KML et extrait les données des magasins."""
@@ -73,6 +87,44 @@ def parse_kml(kml_file):
             store['Latitude'] = None
             store['Longitude'] = None
 
+        # Superficies depuis les polygones
+        superficie_m2 = None
+
+        # Chercher Polygon
+        polygon = placemark.find('kml:Polygon', ns)
+        if polygon is not None:
+            outer = polygon.find('kml:outerBoundaryIs/kml:LinearRing/kml:coordinates', ns)
+            if outer is not None and outer.text:
+                coords_text = outer.text.strip()
+                coords = []
+                for coord in coords_text.split():
+                    parts = coord.split(',')
+                    if len(parts) >= 2:
+                        coords.append((float(parts[0]), float(parts[1])))
+
+                if len(coords) >= 3:
+                    superficie_m2 = aire_geodesique_m2(coords)
+
+        # LineString (fallback)
+        if superficie_m2 is None:
+            linestring = placemark.find('kml:LineString', ns)
+            if linestring is not None:
+                coords_el = linestring.find('kml:coordinates', ns)
+                if coords_el is not None and coords_el.text:
+                    coords_text = coords_el.text.strip()
+                    coords = []
+                    for coord in coords_text.split():
+                        parts = coord.split(',')
+                        if len(parts) >= 2:
+                            coords.append((float(parts[0]), float(parts[1])))
+
+                    if len(coords) >= 3:
+                        superficie_m2 = aire_geodesique_m2(coords)
+
+        # Convertir en pi²
+        store['Superficie (m²)'] = round(superficie_m2) if superficie_m2 else None
+        store['Superficie (pi²)'] = round(superficie_m2 * 10.7639) if superficie_m2 else None
+
         stores.append(store)
 
     return stores
@@ -99,15 +151,24 @@ def main():
     df = pd.DataFrame(stores)
 
     # Reordonner les colonnes
-    columns = ['Nom', 'Adresse', 'Ville', 'Province', 'Code postal', 'Latitude', 'Longitude']
-    df = df[columns]
+    columns = ['Nom', 'Adresse', 'Ville', 'Province', 'Code postal', 'Latitude', 'Longitude', 'Superficie (m²)', 'Superficie (pi²)']
+    df = df[[col for col in columns if col in df.columns]]
 
     # Exporter en Excel
     output_file = Path(kml_file).stem + '.xlsx'
     df.to_excel(output_file, index=False, sheet_name='Magasins')
 
     print(f"✅ Excel créé : {output_file}")
-    print(f"📊 {len(df)} lignes × {len(df.columns)} colonnes\n")
+    print(f"📊 {len(df)} lignes × {len(df.columns)} colonnes")
+
+    # Résumé superficies
+    superficies = df['Superficie (m²)'].dropna()
+    if len(superficies) > 0:
+        print(f"\n📐 Superficies :")
+        print(f"   Min : {superficies.min():>8,.0f} m²  ({superficies.min() * 10.7639:>8,.0f} pi²)")
+        print(f"   Max : {superficies.max():>8,.0f} m²  ({superficies.max() * 10.7639:>8,.0f} pi²)")
+        print(f"   Moy : {superficies.mean():>8,.0f} m²  ({superficies.mean() * 10.7639:>8,.0f} pi²)")
+        print(f"\n   Magasins avec superficie : {len(superficies)}/{len(df)}\n")
 
 if __name__ == '__main__':
     main()
