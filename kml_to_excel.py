@@ -6,7 +6,7 @@ Parse le KML Google Earth avec les superficies et exporte en Excel.
 Calcule la superficie à partir des polygones.
 
 Usage:
-    python kml_to_excel.py CastleSuperficieverifiee.kml
+    python kml_to_excel.py Castle-Superficie-verifiee.kml
 """
 
 import xml.etree.ElementTree as ET
