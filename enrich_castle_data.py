@@ -87,6 +87,14 @@ def main():
         reader = csv.DictReader(f)
         rows = list(reader)
 
+    # Nettoyer les noms de colonnes (supprimer None)
+    if rows:
+        clean_rows = []
+        for row in rows:
+            clean_row = {k: v for k, v in row.items() if k is not None}
+            clean_rows.append(clean_row)
+        rows = clean_rows
+
     print(f"🏪 Enrichissement de {len(rows)} magasins...\n")
 
     # Enrichir chaque magasin
@@ -115,14 +123,20 @@ def main():
             print("⚠️")
 
     # Écrire le CSV enrichi
-    fieldnames = list(rows[0].keys()) if rows else []
-    if 'Téléphone' not in fieldnames:
-        fieldnames.extend(['Téléphone', 'Email', 'Heures'])
+    if rows:
+        # Construire les fieldnames à partir de la première ligne + les nouveaux champs
+        fieldnames = list(rows[0].keys())
+        fieldnames = [f for f in fieldnames if f]  # Supprimer les None
 
-    with open(output_file, 'w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
+        # Ajouter les nouveaux champs s'ils ne sont pas présents
+        for new_field in ['Téléphone', 'Email', 'Heures']:
+            if new_field not in fieldnames:
+                fieldnames.append(new_field)
+
+        with open(output_file, 'w', encoding='utf-8-sig', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+            writer.writeheader()
+            writer.writerows(rows)
 
     enriched_count = sum(1 for row in rows if row.get('Téléphone'))
     print(f"\n{'='*60}")
