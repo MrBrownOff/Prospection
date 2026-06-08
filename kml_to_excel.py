@@ -94,7 +94,15 @@ def parse_kml(kml_file):
         # Chercher Polygon
         polygon = placemark.find('{http://www.opengis.net/kml/2.2}Polygon')
         if polygon is not None:
-            outer = polygon.find('{http://www.opengis.net/kml/2.2}outerBoundaryIs/{http://www.opengis.net/kml/2.2}LinearRing/{http://www.opengis.net/kml/2.2}coordinates')
+            outer_boundary = polygon.find('{http://www.opengis.net/kml/2.2}outerBoundaryIs')
+            if outer_boundary is not None:
+                linear_ring = outer_boundary.find('{http://www.opengis.net/kml/2.2}LinearRing')
+                if linear_ring is not None:
+                    outer = linear_ring.find('{http://www.opengis.net/kml/2.2}coordinates')
+                else:
+                    outer = None
+            else:
+                outer = None
             if outer is not None and outer.text:
                 coords_text = outer.text.strip()
                 coords = []
