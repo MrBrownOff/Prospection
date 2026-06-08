@@ -52,19 +52,23 @@ def parse_kml(kml_file):
         # Description (contient adresse, ville, code postal)
         desc_el = placemark.find('kml:description', ns)
         if desc_el is not None and desc_el.text:
-            # Nettoyer le HTML
             text = desc_el.text
-            # Enlever les balises HTML
-            text = re.sub('<[^>]+>', '', text)
-            text = re.sub(r'<!\[CDATA\[(.*?)\]\]>', r'\1', text, flags=re.DOTALL)
-            lines = [line.strip() for line in text.split('<br>') if line.strip()]
-            lines = [line for line in text.split('\n') if line.strip() and 'td' not in line and 'colspan' not in line]
+            # Extraire le contenu CDATA si présent
+            cdata_match = re.search(r'<!\[CDATA\[(.*?)\]\]>', text, re.DOTALL)
+            if cdata_match:
+                text = cdata_match.group(1)
+
+            # Split sur <br> pour obtenir les lignes
+            lines = text.split('<br>')
+            # Nettoyer chaque ligne : supprimer les tags HTML et whitespace
+            lines = [re.sub('<[^>]+>', '', line).strip() for line in lines]
+            lines = [line for line in lines if line]  # Supprimer les lignes vides
 
             if len(lines) >= 4:
-                store['Adresse'] = lines[0].strip()
-                store['Ville'] = lines[1].strip()
-                store['Province'] = lines[2].strip() if len(lines) > 2 else 'Quebec'
-                store['Code postal'] = lines[3].strip() if len(lines) > 3 else ''
+                store['Adresse'] = lines[0]
+                store['Ville'] = lines[1]
+                store['Province'] = lines[2]
+                store['Code postal'] = lines[3]
             else:
                 store['Adresse'] = ''
                 store['Ville'] = ''
