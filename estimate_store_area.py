@@ -278,7 +278,9 @@ class MSFootprints:
         buffer = point_cible.buffer(delta)
 
         candidats = self._tree.query(buffer, predicate="intersects")
-        if not candidats:
+
+        # Vérifier si candidats est vide (gérer les arrays NumPy)
+        if candidats is None or (hasattr(candidats, '__len__') and len(candidats) == 0):
             return None
 
         # Priorité : polygone contenant le point
