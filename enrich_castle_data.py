@@ -82,9 +82,14 @@ def main():
     retailers = api_data.get('retailers', {})
     print(f"📡 {len(retailers)} magasins dans l'API\n")
 
-    # Lire le CSV
+    # Lire le CSV (détecter le délimiteur)
+    delimiter = ','
     with open(stores_file, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f)
+        # Lire la première ligne pour détecter le délimiteur
+        first_line = f.readline()
+        delimiter = ';' if ';' in first_line else ','
+        f.seek(0)
+        reader = csv.DictReader(f, delimiter=delimiter)
         rows = list(reader)
 
     # Nettoyer les noms de colonnes (supprimer None)
@@ -133,8 +138,9 @@ def main():
             if new_field not in fieldnames:
                 fieldnames.append(new_field)
 
+        # Écrire avec le même délimiteur
         with open(output_file, 'w', encoding='utf-8-sig', newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+            writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=delimiter, extrasaction='ignore')
             writer.writeheader()
             writer.writerows(rows)
 
