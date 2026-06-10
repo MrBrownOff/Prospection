@@ -268,27 +268,50 @@ class MSFootprints:
             print(f"❌ Erreur chargement : {e}", file=sys.stderr)
             return False
 
-    def chercher_batiment(self, lat, lon, rayon_m=100):
-        """Cherche un bâtiment à proximité."""
+    def chercher_batiment(self, lat, lon, rayons=(30, 60, 120)):
+        """Cherche un bâtiment : containment d'abord, sinon le plus proche/plus gros."""
         if not self._charge:
             return None
 
         point_cible = Point(lon, lat)
-        delta = rayon_m / 111_000
-        buffer = point_cible.buffer(delta)
 
-        candidats = self._tree.query(buffer, predicate="intersects")
+        for rayon_m in rayons:
+            delta = rayon_m / 111_000
+            buffer = point_cible.buffer(delta)
 
-        # Vérifier si candidats est vide (gérer les arrays NumPy)
-        if candidats is None or (hasattr(candidats, '__len__') and len(candidats) == 0):
-            return None
+            candidats = self._tree.query(buffer, predicate="intersects")
 
-        # Priorité : polygone contenant le point
-        for idx in candidats:
-            if self._polygones[idx].contains(point_cible):
+            # Vérifier si candidats est vide (gérer les arrays NumPy)
+            if candidats is None or (hasattr(candidats, '__len__') and len(candidats) == 0):
+                continue
+
+            # Priorité 1 : polygone contenant le point
+            for idx in candidats:
+                if self._polygones[idx].contains(point_cible):
+                    coords = self._coords_list[idx]
+                    if aire_geodesique_m2(coords) >= 10:
+                        return {"coords": coords, "contient": True, "distance_m": 0}
+
+            # Priorité 2 : bâtiment le plus proche, en favorisant les gros
+            # (le géocodage tombe souvent dans la rue devant le magasin)
+            meilleur = None
+            meilleur_score = None
+            for idx in candidats:
+                poly = self._polygones[idx]
                 coords = self._coords_list[idx]
-                if aire_geodesique_m2(coords) >= 10:
-                    return {"coords": coords, "contient": True}
+                aire = aire_geodesique_m2(coords)
+                if aire < 40:  # ignorer cabanons et petites annexes
+                    continue
+                dist_m = poly.distance(point_cible) * 111_000
+                # Score : distance pénalisée, taille bonifiée (plafonnée)
+                score = dist_m - min(aire, 2000) / 100
+                if meilleur_score is None or score < meilleur_score:
+                    meilleur_score = score
+                    meilleur = {"coords": coords, "contient": False,
+                                "distance_m": round(dist_m)}
+
+            if meilleur:
+                return meilleur
 
         return None
 
@@ -303,15 +326,19 @@ def estimer_superficie(lat, lon, ms):
 
     # 2. Microsoft
     if ms.charger():
-        bat = ms.chercher_batiment(lat, lon)
+        bat = ms.chercher_batiment(lat, lon, rayons=RAYONS_TENTATIVE)
         if bat:
             aire = aire_geodesique_m2(bat["coords"])
             if aire >= 10:
+                if bat["contient"]:
+                    note = "Microsoft (polygone contient le point)"
+                else:
+                    note = f"Microsoft (bâtiment le plus proche, ~{bat['distance_m']} m — à vérifier)"
                 return {
                     "superficie_m2": round(aire),
                     "superficie_pi2": round(aire * 10.7639),
                     "source": "MS-Footprints",
-                    "note": "Microsoft (polygon contient le point)",
+                    "note": note,
                 }
 
     return {"superficie_m2": None, "superficie_pi2": None, "source": "non_trouve", "note": ""}
