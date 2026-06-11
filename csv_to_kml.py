@@ -16,16 +16,20 @@ def csv_to_kml(csv_path, kml_path=None):
     if kml_path is None:
         kml_path = Path(csv_path).stem + ".kml"
 
-    # Lire CSV (détection d'encodage)
+    # Lire CSV (détection d'encodage ET délimiteur)
     encodings = ['utf-8-sig', 'utf-8', 'latin-1', 'cp1252']
     rows = None
 
     for enc in encodings:
         try:
             with open(csv_path, 'r', encoding=enc) as f:
-                reader = csv.DictReader(f)
+                # Lire la première ligne pour détecter le délimiteur
+                first_line = f.readline()
+                delimiter = ';' if ';' in first_line else ','
+                f.seek(0)
+                reader = csv.DictReader(f, delimiter=delimiter)
                 rows = list(reader)
-            print(f"✓ CSV lu avec {enc}")
+            print(f"✓ CSV lu avec {enc}, délimiteur détecté: '{delimiter}'\n")
             break
         except (UnicodeDecodeError, UnicodeError):
             continue
