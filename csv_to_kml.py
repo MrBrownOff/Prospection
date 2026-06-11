@@ -29,6 +29,29 @@ def csv_to_kml(csv_path, kml_path=None):
         print(f"❌ Impossible de lire {csv_path}")
         sys.exit(1)
 
+    # Afficher les colonnes trouvées
+    if rows:
+        colonnes = list(rows[0].keys())
+        print(f"Colonnes détectées : {colonnes}\n")
+
+    # Mapper les colonnes (flexible)
+    col_nom = col_adresse = col_ville = col_lat = col_lon = None
+
+    for col in rows[0].keys():
+        col_lower = col.lower().strip()
+        if 'nom' in col_lower:
+            col_nom = col
+        elif 'adresse' in col_lower:
+            col_adresse = col
+        elif 'ville' in col_lower:
+            col_ville = col
+        elif 'latitude' in col_lower or 'lat' in col_lower:
+            col_lat = col
+        elif 'longitude' in col_lower or 'lon' in col_lower:
+            col_lon = col
+
+    print(f"Mappé : Nom={col_nom}, Adresse={col_adresse}, Ville={col_ville}, Lat={col_lat}, Lon={col_lon}\n")
+
     # Générer KML
     kml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -38,20 +61,21 @@ def csv_to_kml(csv_path, kml_path=None):
         '<description>Magasins Timbermart Québec</description>',
     ]
 
+    count = 0
     for row in rows:
-        nom = (row.get('Nom') or '').strip()
-        adresse = (row.get('Adresse') or '').strip()
-        ville = (row.get('Ville') or '').strip()
+        nom = (row.get(col_nom) or '').strip() if col_nom else ''
+        adresse = (row.get(col_adresse) or '').strip() if col_adresse else ''
+        ville = (row.get(col_ville) or '').strip() if col_ville else ''
 
         try:
-            lat = float(row.get('Latitude', 0))
-            lon = float(row.get('Longitude', 0))
+            lat = float(row.get(col_lat, 0)) if col_lat else 0
+            lon = float(row.get(col_lon, 0)) if col_lon else 0
         except (ValueError, TypeError):
             print(f"⚠️  {nom} — coords invalides, ignoré")
             continue
 
         if not nom or not lat or not lon:
-            print(f"⚠️  Données incomplètes, ignoré")
+            print(f"⚠️  {nom} — données incomplètes (nom={nom}, lat={lat}, lon={lon}), ignoré")
             continue
 
         # Placemark KML
@@ -65,6 +89,7 @@ def csv_to_kml(csv_path, kml_path=None):
             '</ExtendedData>',
             '</Placemark>',
         ])
+        count += 1
 
     kml_lines.extend(['</Document>', '</kml>'])
 
@@ -72,7 +97,7 @@ def csv_to_kml(csv_path, kml_path=None):
     with open(kml_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(kml_lines))
 
-    print(f"✅ KML généré : {kml_path} ({len(rows)} magasins)")
+    print(f"✅ KML généré : {kml_path} ({count}/{len(rows)} magasins)")
     return kml_path
 
 if __name__ == '__main__':
