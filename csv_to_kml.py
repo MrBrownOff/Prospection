@@ -4,6 +4,11 @@
 import csv
 import sys
 from pathlib import Path
+from xml.sax.saxutils import escape
+
+def escape_xml(text):
+    """Échappe les caractères spéciaux XML"""
+    return escape(str(text) if text else "")
 
 def csv_to_kml(csv_path, kml_path=None):
     """Convertit CSV → KML avec structure attendue par superficie_commerces.py"""
@@ -78,14 +83,14 @@ def csv_to_kml(csv_path, kml_path=None):
             print(f"⚠️  {nom} — données incomplètes (nom={nom}, lat={lat}, lon={lon}), ignoré")
             continue
 
-        # Placemark KML
+        # Placemark KML (échapper les caractères XML)
         kml_lines.extend([
             '<Placemark>',
-            f'<name>{nom}</name>',
+            f'<name>{escape_xml(nom)}</name>',
             f'<Point><coordinates>{lon},{lat},0</coordinates></Point>',
             '<ExtendedData>',
-            f'<Data name="Adresse"><value>{adresse}</value></Data>',
-            f'<Data name="Ville"><value>{ville}</value></Data>',
+            f'<Data name="Adresse"><value>{escape_xml(adresse)}</value></Data>',
+            f'<Data name="Ville"><value>{escape_xml(ville)}</value></Data>',
             '</ExtendedData>',
             '</Placemark>',
         ])
