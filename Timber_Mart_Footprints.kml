@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1MwpmsNaKrli3R15qvxS3YXnEUSqA8Hw6">
+	<name>Timber Mart</name>
+	<gx:CascadingStyle kml:id="__managed_style_4B426673D13FF2AD8DDC_highlight">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffd27619</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40f5a542</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_399056E0B33FF2AD8DDC_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffcc6600</color>
+				<width>2.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>55cc6600</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_1F2C230BCC3FF2AD8DDC">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_2C009A096E3FF2AD8DDC_highlight">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffcc6600</color>
+				<width>3.75</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>55cc6600</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_2C009A096E3FF2AD8DDC">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_2C009A096E3FF2AD8DDC_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2C009A096E3FF2AD8DDC_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_399056E0B33FF2AD8DDC_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffcc6600</color>
+				<width>3.75</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>55cc6600</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_2328B8E4C83FF2AD8DDE_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff00bb00</color>
+				<width>2.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>5500bb00</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_4B426673D13FF2AD8DDC">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_4B426673D13FF2AD8DDC_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_4B426673D13FF2AD8DDC_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="__managed_style_399056E0B33FF2AD8DDC">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_04A980D8793FF2AD8DDE_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff0000ff</color>
+				<width>2.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>550000ff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_2328B8E4C83FF2AD8DDE">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_2328B8E4C83FF2AD8DDE_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2328B8E4C83FF2AD8DDE_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_2328B8E4C83FF2AD8DDE_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff00bb00</color>
+				<width>3.75</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>5500bb00</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_04A980D8793FF2AD8DDE">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_04A980D8793FF2AD8DDE_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_04A980D8793FF2AD8DDE_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_0CE384E12E3FF2AD8DDC_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffd27619</color>
+				<width>3.75</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>55f5a542</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_04A980D8793FF2AD8DDE_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff0000ff</color>
+				<width>3.75</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>550000ff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0CE384E12E3FF2AD8DDC_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffd27619</color>
+				<width>2.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>55f5a542</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1F2C230BCC3FF2AD8DDC_normal">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffd27619</color>
+				<width>2.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>55f5a542</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_19A3DC42453FF2AD8DDE_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_19A3DC42453FF2AD8DDE_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0CE384E12E3FF2AD8DDC">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_4B426673D13FF2AD8DDC_normal">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffd27619</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40f5a542</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1F2C230BCC3FF2AD8DDC_highlight">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffd27619</color>
+				<width>3.75</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>55f5a542</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_2C009A096E3FF2AD8DDC_normal">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffcc6600</color>
+				<width>2.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>55cc6600</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_19A3DC42453FF2AD8DDE">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_19A3DC42453FF2AD8DDE_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_19A3DC42453FF2AD8DDE_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder id="5CCA50F278000001">
+		<name>Empreintes bâtiments</name>
+		<open>1</open>
+		<description>Vert=OSM | Bleu=MS dans polygone | Orange=coords corrigées | Rouge=à vérifier | Gris=non trouvé</description>
+		<styleUrl>#__managed_style_19A3DC42453FF2AD8DDE</styleUrl>
+		<Placemark id="5CCA50F278000002">
+			<name>Aluminium B Bouchard</name>
+			<description>Source: OSM | 725 m² (7,802 pi²) | Point dans le polygone</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-73.804867,45.603372,0 -73.8048299191492,45.60320081733536,0 -73.8045034,45.6032346,0 -73.8045508,45.6034131,0 -73.804867,45.603372,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000004">
+			<name>Cantin &amp; Fils</name>
+			<description>Source: MS-Footprints | 265 m² (2,854 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.256899,46.84437999999999,0 -71.256997,46.84449000000001,0 -71.257097,46.844448,0 -71.25711200000001,46.84446499999999,0 -71.257187,46.844434,0 -71.257053,46.844285,0 -71.256947,46.844329,0 -71.256968,46.844352,0 -71.256899,46.84437999999999,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000005">
+			<name>Centre Du Bricoleur Falardeau</name>
+			<description>Source: MS-Footprints | 319 m² (3,430 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.10844877958073,48.62748536008279,0 -71.10836054978371,48.6276408669908,0 -71.1086380096623,48.62769442557207,0 -71.10870806475633,48.6275358534814,0 -71.10844877958073,48.62748536008279,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000006">
+			<name>Distribution Eco Sol / Centre Jardin St-Césaire</name>
+			<description>Source: MS-Footprints | 129 m² (1,391 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.98107584949533,45.41171677719274,0 -72.98066678450401,45.41167394615481,0 -72.98064731141386,45.41177712278554,0 -72.98104535087349,45.4118246526202,0 -72.98107584949533,45.41171677719274,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000007">
+			<name>Timber Mart - Rénovation PYL Inc.</name>
+			<description>Source: MS-Footprints | 234 m² (2,520 pi²) | Polygone MS le plus proche ⚠ à vérifier | Aucun bâtiment (OSM + MS)</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.18812460202447,45.79392458692459,0 -72.18834633272897,45.79405970066585,0 -72.18863631623216,45.79381408324308,0 -72.18839713433675,45.79368363685376,0 -72.18812460202447,45.79392458692459,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000008">
+			<name>Couture Timber Mart - Quincaillerie Du Carre</name>
+			<description>Source: MS-Footprints | 945 m² (10,167 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.01495904750443,45.78522430646832,0 -72.01474709174992,45.78518504431543,0 -72.01477505517586,45.78515691091333,0 -72.01465477945592,45.78508902196267,0 -72.01456576391782,45.78507585662421,0 -72.01452425171325,45.7851669613209,0 -72.01462577722803,45.78519364807515,0 -72.01472654730549,45.78523354135297,0 -72.01472123377987,45.78525614470598,0 -72.01493054232256,45.7852909489344,0 -72.01495904750443,45.78522430646832,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000009">
+			<name>Couture Timber Mart (Richmond)</name>
+			<description>Source: MS-Footprints | 52 m² (560 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_04A980D8793FF2AD8DDE</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.13604599999999,45.663567,0 -72.136149,45.66356199999999,0 -72.136143,45.663504,0 -72.13603999999999,45.663509,0 -72.13604599999999,45.663567,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800000A">
+			<name>Couture TIMBER MART (Sherbrooke)</name>
+			<description>Source: OSM | 404 m² (4,350 pi²) | Point dans le polygone</description>
+			<styleUrl>#__managed_style_2328B8E4C83FF2AD8DDE</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.94466970000001,45.3871021,0 -71.9443558,45.3871066,0 -71.9443601,45.3872545,0 -71.94467400000001,45.3872499,0 -71.94466970000001,45.3871021,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800000B">
+			<name>Couture Timber Mart Express</name>
+			<description>Source: MS-Footprints | 279 m² (3,007 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.14317800000001,45.661587,0 -72.14314582306028,45.66149480541988,0 -72.14282601704541,45.66155606756631,0 -72.14285208094338,45.66164412665984,0 -72.14317800000001,45.661587,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800000C">
+			<name>DISTRIBUTION G.I INC.</name>
+			<description>Source: MS-Footprints | 295 m² (3,178 pi²) | Polygone MS le plus proche ⚠ à vérifier | Aucun bâtiment (OSM + MS)</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-73.27234300000001,45.438965,0 -73.272414,45.43875,0 -73.27226400000001,45.438726,0 -73.272193,45.438941,0 -73.27234300000001,45.438965,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800000D">
+			<name>Distribution Marc Chevalier</name>
+			<description>Source: MS-Footprints | 195 m² (2,094 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.96481751389099,45.11680789895243,0 -72.96480189004217,45.11698121888497,0 -72.96538521155821,45.11700767277303,0 -72.9654087914036,45.11683637683925,0 -72.96481751389099,45.11680789895243,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000010">
+			<name>Econobois</name>
+			<description>Source: MS-Footprints | 3,025 m² (32,562 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.3644771309954,46.86960158697087,0 -71.36422600855488,46.86932358784507,0 -71.36380811804189,46.86950090276765,0 -71.36389748220283,46.86959727349642,0 -71.36403449269791,46.86953924881519,0 -71.36421060045126,46.86972140634676,0 -71.3644771309954,46.86960158697087,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000012">
+			<name>Centre de Rénovation G.T Turgeon</name>
+			<description>Source: MS-Footprints | 344 m² (3,699 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-70.29647788228546,46.57878403666355,0 -70.29658769470461,46.57889617636729,0 -70.29690553015524,46.57872088796449,0 -70.29677940541991,46.57860376946991,0 -70.29647788228546,46.57878403666355,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000013">
+			<name>GML Produits De Batiment</name>
+			<description>Source: MS-Footprints | 276 m² (2,973 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-75.46510864166578,46.55230095675622,0 -75.46485315907464,46.55222995386077,0 -75.46471604704305,46.55245103882542,0 -75.46496204870097,46.55251759806455,0 -75.46510864166578,46.55230095675622,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000015">
+			<name>I Gagnon Et Fils</name>
+			<description>Source: MS-Footprints | 531 m² (5,714 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-73.03102,46.28836,0 -73.031037,46.28825,0 -73.030936,46.288242,0 -73.03094400000001,46.288191,0 -73.03063299999999,46.288168,0 -73.030608,46.288329,0 -73.03102,46.28836,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000019">
+			<name>R. Thibault &amp; Fils - TIMBER MART - Quincaillerie</name>
+			<description>Source: MS-Footprints | 508 m² (5,468 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-74.12826137349035,45.17626062641891,0 -74.12836639553984,45.17619157468252,0 -74.12823710636496,45.17610116351641,0 -74.12813640293534,45.17617265949452,0 -74.12826137349035,45.17626062641891,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800001A">
+			<name>Bellavance Marcel 1991 Inc</name>
+			<description>Source: MS-Footprints | 105 m² (1,127 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.7025344576053,46.05545461954533,0 -72.7026803749628,46.05548094208211,0 -72.70274278744192,46.05536149528894,0 -72.70259558367667,46.05533719529234,0 -72.7025344576053,46.05545461954533,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800001B">
+			<name>Matériaux Appalaches</name>
+			<description>Source: MS-Footprints | 922 m² (9,920 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.101827,46.735913,0 -71.101586,46.736098,0 -71.10178999999999,46.736222,0 -71.101754,46.73624999999999,0 -71.101889,46.73633199999999,0 -71.10209500000001,46.736173,0 -71.10198800000001,46.736108,0 -71.102057,46.736054,0 -71.101827,46.735913,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800001D">
+			<name>Matériaux Audet Saint-Marc-des-Carrières</name>
+			<description>Source: MS-Footprints | 740 m² (7,968 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.03140330718668,46.67040652573848,0 -72.03176450432871,46.67062995871824,0 -72.03183792539851,46.67057963840922,0 -72.03188443039021,46.67061272549998,0 -72.03199161337425,46.67053346846107,0 -72.03160383660874,46.6702735277044,0 -72.03140330718668,46.67040652573848,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800001E">
+			<name>Matériaux St-Elie Inc. TIMBER MART</name>
+			<description>Source: MS-Footprints | 1,618 m² (17,418 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.0465570487343,45.39449651040607,0 -72.0465699243797,45.39482767823629,0 -72.04690319181623,45.39482669496719,0 -72.04689561445277,45.3944989507592,0 -72.0465570487343,45.39449651040607,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800001F">
+			<name>Matériaux St-Isidore Timber Mart</name>
+			<description>Source: MS-Footprints | 134 m² (1,444 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.09034362992108,46.58603710803546,0 -71.09007437451289,46.5860444558363,0 -71.09008700682617,46.58621363751019,0 -71.0903551817275,46.58620779941869,0 -71.09034362992108,46.58603710803546,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000020">
+			<name>Menuiserie Gérard Faucher Inc. TIMBER MART</name>
+			<description>Source: MS-Footprints | 122 m² (1,316 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-70.92886950715555,45.96175325026754,0 -70.92908294084367,45.96192706292476,0 -70.92928726651003,45.96180360138138,0 -70.92919418465669,45.96171616600169,0 -70.92926569869978,45.96167446079108,0 -70.92915027704758,45.96158957668883,0 -70.92886950715555,45.96175325026754,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000022">
+			<name>O.Coderre et Fils Ltée</name>
+			<description>Source: MS-Footprints | 540 m² (5,812 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-73.47832907043956,45.96283486533733,0 -73.4782212267047,45.96271987162724,0 -73.47792734329336,45.96288405519991,0 -73.4778440087433,45.96280908065783,0 -73.47770853403547,45.96288407660365,0 -73.4779338070047,45.9630623207216,0 -73.47832907043956,45.96283486533733,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000024">
+			<name>Quincaillerie St-Anselme</name>
+			<description>Source: MS-Footprints | 164 m² (1,768 pi²) | Polygone MS le plus proche ⚠ à vérifier | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_0CE384E12E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-70.95995331265122,46.62304874377971,0 -70.96001364004668,46.62292295876424,0 -70.95933649260492,46.62277886296381,0 -70.95928407175012,46.62291150460925,0 -70.95995331265122,46.62304874377971,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000025">
+			<name>Quincaillerie Centre-Ville Inc. TIMBER MART</name>
+			<description>Source: MS-Footprints | 1,420 m² (15,283 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-68.19133811523963,48.58658496587221,0 -68.19154222928815,48.58644689365563,0 -68.1913675919816,48.58632887675888,0 -68.19116253555434,48.5864620386742,0 -68.19133811523963,48.58658496587221,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000026">
+			<name>Quincaillerie Guy Parent Inc. TIMBER MART</name>
+			<description>Source: MS-Footprints | 510 m² (5,489 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.3737833393931,45.96924709396946,0 -71.37392742565119,45.9691256117848,0 -71.37366458706849,45.9689880399966,0 -71.37354541586865,45.96909456804853,0 -71.3737833393931,45.96924709396946,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F278000027">
+			<name>Quincaillerie Luc Sylvain Inc.</name>
+			<description>Source: MS-Footprints | 210 m² (2,262 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.05968394980431,46.40514726496762,0 -71.05951255498039,46.40518288129304,0 -71.05958337313186,46.40532622762441,0 -71.05976254566346,46.40527965584966,0 -71.05968394980431,46.40514726496762,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800002B">
+			<name>Robert Morin</name>
+			<description>Source: MS-Footprints | 531 m² (5,714 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-73.03102,46.28836,0 -73.031037,46.28825,0 -73.030936,46.288242,0 -73.03094400000001,46.288191,0 -73.03063299999999,46.288168,0 -73.030608,46.288329,0 -73.03102,46.28836,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5CCA50F27800002D">
+			<name>Quincaillerie Yvon Duchesne &amp; Fils Inc</name>
+			<description>Source: MS-Footprints | 710 m² (7,638 pi²) | Point dans polygone MS | Erreur API Overpass</description>
+			<styleUrl>#__managed_style_399056E0B33FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-70.53837132321961,47.55623432750316,0 -70.53828044764973,47.55631529452464,0 -70.53834970812997,47.55634643494262,0 -70.53830973730156,47.55640034037366,0 -70.53826377582153,47.5563815232958,0 -70.53822312306698,47.55643332372428,0 -70.53830965932879,47.55647364131425,0 -70.53840571344423,47.55650706764015,0 -70.53847752390054,47.5564375325343,0 -70.538546,47.556463,0 -70.53865661191756,47.5563733251505,0 -70.53837132321961,47.55623432750316,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="0206FC479F3FECB7CE63">
+			<name>Aluminium J. Clément</name>
+			<description><![CDATA[<div>1535 QC-117, Mont-Tremblant, QC J8E 2X9<br></div>]]></description>
+			<LookAt>
+				<longitude>-74.61051890920041</longitude>
+				<latitude>46.12742607109791</latitude>
+				<altitude>216.0764382922302</altitude>
+				<heading>269.0906338857829</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>104.4093718375189</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_2C009A096E3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-74.61032356402644,46.12735692083689,0 -74.61038140486215,46.12749451938233,0 -74.61049039406016,46.12747412607805,0 -74.61049080207032,46.12744710796103,0 -74.61055701790073,46.12743676693025,0 -74.6105222739273,46.12732752789866,0 -74.61032356402644,46.12735692083689,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="0B9F7B88F73FED0750C0">
+			<name>Distribution Matapédienne M&amp;S Inc.</name>
+			<description><![CDATA[<div>130 boulevard Saint-Benoît, Amqui, QC, Canada, G5J2E7<br></div>]]></description>
+			<LookAt>
+				<longitude>-67.43332994020582</longitude>
+				<latitude>48.46533181898283</latitude>
+				<altitude>156.9605466237139</altitude>
+				<heading>1.478779333471098e-06</heading>
+				<tilt>0</tilt>
+				<gx:fovy>34.99999999190133</gx:fovy>
+				<range>70.14671474235003</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-67.43339641140471,48.46532027718613,0 -67.43325206330373,48.46526236171138,0 -67.43313381441382,48.46538899537727,0 -67.43328352572303,48.46544321848578,0 -67.43339641140471,48.46532027718613,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="097F132BAA3FED0A998F">
+			<name>Distribution Revex</name>
+			<description><![CDATA[<div>324 Rue Laurier, Saint-Apollinaire, QC G0S 2E0<br></div>]]></description>
+			<LookAt>
+				<longitude>-71.50518729801901</longitude>
+				<latitude>46.62280293945638</latitude>
+				<altitude>93.38529499838278</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>177.8516283112367</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.50530088424392,46.62293710547974,0 -71.50546016250226,46.62283229058809,0 -71.50514064516261,46.62261928595083,0 -71.50498878174119,46.62272272474729,0 -71.50530088424392,46.62293710547974,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="05FC0E877D3FED0F1E08">
+			<name>Emile Bilodeau &amp; Fils Inc</name>
+			<description><![CDATA[<div>1153 Rue St Georges, Saint-Bernard, QC G0S 2G0<br></div>]]></description>
+			<LookAt>
+				<longitude>-71.14217569729679</longitude>
+				<latitude>46.4947479618093</latitude>
+				<altitude>182.1271275700615</altitude>
+				<heading>302.7855906049218</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>499.9817498306949</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.14256224881345,46.49472497213804,0 -71.14232838685059,46.49484741845581,0 -71.14266964720902,46.49515910177644,0 -71.14289734154823,46.49504336201511,0 -71.14256224881345,46.49472497213804,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="05345786A23FED21DE21">
+			<name>Quincaillerie Hercule Fortin - Timber Mart</name>
+			<description><![CDATA[<div>250 Rue Saint-Joseph, Saint-Victor, QC G0M 2B0<br></div>]]></description>
+			<LookAt>
+				<longitude>-70.90650734266968</longitude>
+				<latitude>46.14485900918125</latitude>
+				<altitude>299.0873947521408</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>34.99999316332635</gx:fovy>
+				<range>197.5291436252883</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-70.90668977745003,46.14499241227337,0 -70.90632400523151,46.14471809455039,0 -70.90610754560805,46.14486678068363,0 -70.90633359196183,46.14504004846679,0 -70.90645876020342,46.14513743227597,0 -70.90668977745003,46.14499241227337,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="056FE4FB173FED2DFD9B">
+			<name>Quincaillerie Hervé Larochelle Inc</name>
+			<description><![CDATA[<div>1190 Rue Principale, Saint-Côme, QC J0K 2B0<br></div>]]></description>
+			<LookAt>
+				<longitude>-73.76899843119052</longitude>
+				<latitude>46.27541814082753</latitude>
+				<altitude>249.3864973650916</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>34.99999394094509</gx:fovy>
+				<range>186.5182657966398</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-73.76904254821383,46.27523835568188,0 -73.76864470124683,46.27544728146749,0 -73.76871128991279,46.27551361687964,0 -73.76875997900827,46.27556817153886,0 -73.76862600919193,46.27563717900316,0 -73.76871999192093,46.27575785120665,0 -73.76881821510257,46.27571198874107,0 -73.76881101250451,46.27568835624211,0 -73.769252393258,46.27549024810335,0 -73.76904254821383,46.27523835568188,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="08AFA5A0513FED6392C3">
+			<name>O. Coderre &amp; Fils Ltée</name>
+			<description><![CDATA[<div>32 Rue Dupuis, Saint-Jacques, QC J0K 2R0<br></div>]]></description>
+			<LookAt>
+				<longitude>-73.57242663389736</longitude>
+				<latitude>45.94570704190447</latitude>
+				<altitude>57.72765834465444</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>34.99999788683549</gx:fovy>
+				<range>56.36653678139739</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-73.57273162441109,45.9458429894866,0 -73.57250726799523,45.94568481878515,0 -73.57246439051978,45.94571914544919,0 -73.57243761450532,45.94569694066352,0 -73.57240248871901,45.94572814247395,0 -73.57236945494884,45.94570972662819,0 -73.5719804900278,45.94598155853566,0 -73.57225614113267,45.94616201766278,0 -73.57273162441109,45.9458429894866,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="0D438EC3053FED6FBF99">
+			<name>Quincaillerie M-A S</name>
+			<description><![CDATA[<div>172 Rue Principale, Saint-Just-de-Bretenières, QC G0R 3H0<br></div>]]></description>
+			<LookAt>
+				<longitude>-70.09770907440124</longitude>
+				<latitude>46.56443144638224</latitude>
+				<altitude>365.1835895227405</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>34.99996817113849</gx:fovy>
+				<range>161.8825173059486</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-70.09755531288265,46.5642906484615,0 -70.09744982534521,46.56436052058243,0 -70.09754655298416,46.56442228657438,0 -70.09763841694874,46.56435330935147,0 -70.09755531288265,46.5642906484615,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="07CB6ED6DB3FED74EC60">
+			<name>Revêtements Stéphane Dionne Inc</name>
+			<description><![CDATA[<div>2060 Rue Joseph-St-Cyr, Drummondville, QC J2C 8V6<br></div>]]></description>
+			<LookAt>
+				<longitude>-72.52972152120337</longitude>
+				<latitude>45.87951109011004</latitude>
+				<altitude>82.70762538307933</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>34.99999849354698</gx:fovy>
+				<range>211.8853254911301</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_1F2C230BCC3FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-72.52956835343126,45.87943916490309,0 -72.52946539966941,45.87939069325534,0 -72.52931917239646,45.87952208625293,0 -72.52941701634022,45.8795773134975,0 -72.52956835343126,45.87943916490309,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="0B6A6928A53FECA8DFEC">
+			<name>Matériaux Audet Québec</name>
+			<description><![CDATA[<div>2795 Bd Père-Lelièvre, Québec, QC G1P 2X9<br></div>]]></description>
+			<LookAt>
+				<longitude>-71.30854038287302</longitude>
+				<latitude>46.81247964411292</latitude>
+				<altitude>11.64225928671521</altitude>
+				<heading>123.0593207753561</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>277.0854190341197</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_4B426673D13FF2AD8DDC</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-71.30827786924404,46.81200196144668,0 -71.30833004352139,46.81216245056131,0 -71.30854164557688,46.81213830695901,0 -71.30865668657466,46.81248113431583,0 -71.30913527036398,46.81240602685855,0 -71.30897410974313,46.8118928052872,0 -71.30827786924404,46.81200196144668,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
